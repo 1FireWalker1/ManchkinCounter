@@ -1,29 +1,31 @@
 from Player import pck
+from Player import col
+from Player import Style
 
 class Group:
-    __l_players = []
-    __amount = 0
-    __name = ''
+    _l_players = []
+    _amount = 0
+    _name = ''
 
     def __init__(self, players, type='default'):
-        self.__l_players = players
-        self.__amount = len(players)
-        if type == 'sys': self.__name = 'sys'
-        elif type == 'game': self.__name = 'game'
+        self._l_players = players
+        self._amount = len(players)
+        if type == 'sys': self._name = 'sys'
+        elif type == 'game': self._name = 'game'
         else:
             while name in ['sys', 'game']:
                 name = input('Input name of the group (except (sys), (game)): ')
-            self.__name = name
+            self._name = name
 
     def ListOfPlayers(self):
-        for index, player in enumerate(self.__l_players):
-            print(list(enumerate(self.__l_players)))
-            print(f'{index}) Name: {player.__name}; Sex: {player.__sex}')
+        for index, player in enumerate(self._l_players):
+            buf = col.colours[player._colour]
+            print(f'{index}) Name: {buf[0]+buf[1]}{player.GetName()}{Style.RESET_ALL}; Sex: {player.GetSex()}')
 
     def Serialise(self, type='default'):
         if type == 'sys':
             with open(r'groups\sys.pickle', 'wb') as f:
                 pck.dump(self, f)
         else:
-            with open(f'groups\{self.__name}.pickle', 'wb') as f:
+            with open(f'groups\{self._name}.pickle', 'wb') as f:
                 pck.dump(self, f)

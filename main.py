@@ -13,26 +13,29 @@ colorama.init()
 players = []
 
 if os.path.isfile(os.path.join(path, grp_path, sys_grp)):
-    print('Loading sys_group...', end = ' ')
+    print('Loading sys_group...')
     f = open(os.path.join(path, grp_path, sys_grp), 'rb')
     sys_group = pck.load(f)
+    f.close()
     sys_group.ListOfPlayers()
-    print('ok')
 else:
-    print('Creating sys_group...', end=' ')
+    print('Creating sys_group...')
     list_of_files_p = os.listdir(os.path.join(path, plr_path))
-    if list_of_files_p is not None:
+    if list_of_files_p != []:
         for file in list_of_files_p:
             f = open(os.path.join(path, plr_path, file), 'rb')
-            players.append(pck.load(os.path.join(path, plr_path, f)))
+            players.append(pck.load(os.path.join(path, plr_path, file), f))
+            f.close()
         sys_group = grp(players, 'sys')
-        print('Ok')
+        sys_group.ListOfPlayers()
 
-for _ in range(2):
-    p = plr()
-    players.append(p)
-    p.Serialise()
+# pl = []
+# for _ in range(3):
+#     p = plr()
+#     p.Serialise()
+#     pl.append(p)
+#
+# sys_group = grp(pl, 'sys')
 
-
-system_group = grp(players, 'sys')
-sys_group.Serialise(type = 'sys')
+# sys_group.Serialise(type = 'sys')
+# sys_group.ListOfPlayers()

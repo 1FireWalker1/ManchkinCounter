@@ -28,6 +28,11 @@ else:
             f.close()
         sys_group = grp(players, 'sys')
         sys_group.ListOfPlayers()
+    else:
+        amount = int(input('How much players do u want to create? '))
+        if amount !=
+        for i in range(int(amount)):
+
 
 # pl = []
 # for _ in range(3):

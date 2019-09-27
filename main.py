@@ -12,27 +12,26 @@ import os
 colorama.init()
 players = []
 
-if os.path.isfile(os.path.join(path, grp_path, sys_grp)):
-    print('Loading sys_group...')
-    f = open(os.path.join(path, grp_path, sys_grp), 'rb')
-    sys_group = pck.load(f)
-    f.close()
+print('Loading players...', end = ' ')
+WriteLog('Loading players...', __name__)
+list_of_files_p = os.listdir(os.path.join(path, plr_path))
+if list_of_files_p != []:
+    for file in list_of_files_p:
+        f = open(os.path.join(path, plr_path, file), 'rb')
+        players.append(pck.load(os.path.join(path, plr_path, file), f))
+        f.close()
+    print('Ok')
+    print('='*50 + '\n Available players:\n')
+    sys_group = grp(players, 'sys')
     sys_group.ListOfPlayers()
 else:
-    print('Creating sys_group...')
-    list_of_files_p = os.listdir(os.path.join(path, plr_path))
-    if list_of_files_p != []:
-        for file in list_of_files_p:
-            f = open(os.path.join(path, plr_path, file), 'rb')
-            players.append(pck.load(os.path.join(path, plr_path, file), f))
-            f.close()
-        sys_group = grp(players, 'sys')
-        sys_group.ListOfPlayers()
-    else:
-        amount = int(input('How much players do u want to create? '))
-        if amount !=
+    print('List of players is empty...\n')
+    amount = int(input('How much players do u want to create? '))
+    if amount !=
         for i in range(int(amount)):
-
+            p = plr()
+            p.Serialise()
+            pl.append(p)
 
 # pl = []
 # for _ in range(3):

@@ -11,10 +11,9 @@ class Group:
         self._l_players = players
         self._amount = len(players)
         if type == 'sys': self._name = 'sys'
-        elif type == 'game': self._name = 'game'
         else:
-            while name in ['sys', 'game']:
-                name = input('Input name of the group (except (sys), (game)): ')
+            while name == 'sys':
+                name = input('Input name of the group (except (sys)): ')
             self._name = name
 
     def ListOfPlayers(self):

@@ -6,6 +6,8 @@ from Group import Group as grp
 
 from Settings import *
 
+from Interface import PrintMenu, PrintMenuEditPlayer
+
 import pickle as pck
 import colorama
 import os
@@ -39,7 +41,7 @@ if ch == '1':
 os.system('cls')
 sys_group.ListOfPlayers()
 WriteLog('Choice of players for game...', __name__)
-index = input('Input index of players for game (split by ,): ').replace(' ', '').split(',')
+index = input('Input index of players for game (minimum 2)(split by ,): ').replace(' ', '').split(',')
 WriteLog(f'Indexes: {index}', __name__)
 
 buf = []
@@ -49,5 +51,30 @@ for i in index:
 sys_group = grp(buf, 'sys')
 sys_group.Serialise()
 sys_group.ListOfPlayers()
+
+PrintMenu()
+WriteLog('Action from menu (?)', __name__)
+ch = input('What r u want to do?\n')
+WriteLog(f'Action: {ch}', __name__)
+if ch == '0': pass
+if ch == '1': pass
+if ch == '2':
+    WriteLog('Editing Menu', __name__)
+    os.system('cls')
+    PrintMenuEditPlayer()
+    WriteLog('Action from Editing Menu (?)', __name__)
+    ch = input('What r u want to do?\n')
+    WriteLog(f'Action: {ch}', __name__)
+    if ch == '1':
+        os.system('cls')
+        sys_group.ListOfPlayers()
+        WriteLog('Choice of player for Editing...', __name__)
+        index = int(input('Input index of player for Editing: '))
+        WriteLog(f'Index: {index}', __name__)
+        sys_group._l_players[index].SetName()
+
+if ch == '3': pass
+
+
 WriteLog('Exit from program code: 0', __name__)
 WriteLog('', __name__, 'sep')

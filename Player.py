@@ -5,6 +5,8 @@ from Settings import *
 
 from Group import Group as grp
 
+
+import os
 import pickle as pck
 
 def LoadingPlayers():
@@ -22,16 +24,16 @@ def LoadingPlayers():
         print('='*50 + '\nAvailable players in system:\n')
         return grp(players, 'sys')
     else:
-        WriteLog('Empty list of saved players occured, start creating')
+        WriteLog('Empty list of saved players occured, start creating', __name__)
         print('List of players is empty...\n')
         WriteLog('How much players to create (?)', __name__)
         amount = int(input('How much players do u want to create? \n'))
         WriteLog(f'Amount: {amount}', __name__)
         for i in range(int(amount)):
             os.system('cls')
-            WriteLog(f'{i}/{ch}', __name__)
-            print(f'Create: {i}/{ch}')
-            p = plr()
+            WriteLog(f'{i}/{amount}', __name__)
+            print(f'Create: {i}/{amount}')
+            p = Player()
             p.Serialise()
             players.append(p)
         WriteLog('Ok', __name__)
@@ -46,8 +48,8 @@ class Player:
 
     def __init__(self):
         name = ''
-        while os.path.join(path, plr_path, name.join('.pickle')) in os.listdir(os.path.join(path, plr_path)) or name == '':
-            name = input('Input ur name (Only letters): ')
+        while os.path.join(path, plr_path, name + '.pickle') in os.listdir(os.path.join(path, plr_path)) or name == '':
+            name = input('Input ur name (Only letters and numbers): ')
             self._name = name
 
         self._sex = input('Input ur sex: ')
@@ -62,9 +64,16 @@ class Player:
         os.system('cls')
         WriteLog(f'Player ({self._name}) was created', __name__)
 
+    def Delete(self):
+        os.remove(os.path.join(path, plr_path, self._name + '.pickle'))
+        WriteLog(f'Player ({self._name}) deleted', __name__)
 
     def SetName(self):
-        self._name = input('Input ur new name (Only letters): ')
+        name = input('Input ur new name (Only letters and numbers): ')
+        os.remove(os.path.join(path, plr_path, self._name + '.pickle'))
+        WriteLog(f'Player ({self._name}): set Name from ({self._name}) --> ({name})', __name__)
+        self._name = name
+        self.Serialise()
 
     def GetName(self):
         return self._name

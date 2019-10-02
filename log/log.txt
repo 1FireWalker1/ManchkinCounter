@@ -1,0 +1,47 @@
+====================================================================================================
+[ 2019-10-02 | 18:08:27,330675 ][ __main__ ] Start of the program 
+[ 2019-10-02 | 18:08:27,331675 ][ __main__ ] Colorama init... 
+[ 2019-10-02 | 18:08:27,332675 ][ __main__ ] Ok 
+[ 2019-10-02 | 18:08:27,332675 ][ Player ] Loading players... 
+[ 2019-10-02 | 18:08:27,333675 ][ Player ] Empty list of saved players occured, start creating 
+[ 2019-10-02 | 18:08:27,334675 ][ Player ] How much players to create (?) 
+[ 2019-10-02 | 18:08:29,625675 ][ Player ] Amount: 5 
+[ 2019-10-02 | 18:08:29,633675 ][ Player ] 0/5 
+====================================================================================================
+[ 2019-10-02 | 18:11:32,441675 ][ __main__ ] Start of the program 
+[ 2019-10-02 | 18:11:32,453675 ][ __main__ ] Colorama init... 
+[ 2019-10-02 | 18:11:32,456675 ][ __main__ ] Ok 
+[ 2019-10-02 | 18:11:32,457675 ][ Player ] Loading players... 
+[ 2019-10-02 | 18:11:32,458675 ][ Player ] Empty list of saved players occured, start creating 
+[ 2019-10-02 | 18:11:32,458675 ][ Player ] How much players to create (?) 
+[ 2019-10-02 | 18:11:34,551675 ][ Player ] Amount: 5 
+[ 2019-10-02 | 18:11:34,558675 ][ Player ] 0/5 
+[ 2019-10-02 | 18:11:45,628675 ][ Player ] Player (Sigrskaydle) was created 
+[ 2019-10-02 | 18:11:45,631675 ][ Player ] Player (Sigrskaydle) was serialised 
+[ 2019-10-02 | 18:11:45,641675 ][ Player ] 1/5 
+[ 2019-10-02 | 18:12:16,074675 ][ Player ] Player (FireWalker) was created 
+[ 2019-10-02 | 18:12:16,077675 ][ Player ] Player (FireWalker) was serialised 
+[ 2019-10-02 | 18:12:16,086675 ][ Player ] 2/5 
+[ 2019-10-02 | 18:12:38,209675 ][ Player ] Player (Linda) was created 
+[ 2019-10-02 | 18:12:38,211675 ][ Player ] Player (Linda) was serialised 
+[ 2019-10-02 | 18:12:38,218675 ][ Player ] 3/5 
+[ 2019-10-02 | 18:12:46,577675 ][ Player ] Player (ham) was created 
+[ 2019-10-02 | 18:12:46,588675 ][ Player ] Player (ham) was serialised 
+[ 2019-10-02 | 18:12:46,597675 ][ Player ] 4/5 
+[ 2019-10-02 | 18:12:55,961675 ][ Player ] Player (asd) was created 
+[ 2019-10-02 | 18:12:55,964675 ][ Player ] Player (asd) was serialised 
+[ 2019-10-02 | 18:12:55,965675 ][ Player ] Ok 
+[ 2019-10-02 | 18:12:55,966675 ][ Group ] Group (sys) was created 
+[ 2019-10-02 | 18:12:55,968675 ][ Group ] List of players group (sys) 
+[ 2019-10-02 | 18:12:55,969675 ][ __main__ ] Additional players (?) 
+[ 2019-10-02 | 18:13:02,082675 ][ __main__ ] Answer: 0 
+[ 2019-10-02 | 18:13:02,090675 ][ Group ] List of players group (sys) 
+[ 2019-10-02 | 18:13:02,091675 ][ __main__ ] Choice of players for game... 
+[ 2019-10-02 | 18:13:12,401675 ][ __main__ ] Indexes: ['0', '1', '2'] 
+[ 2019-10-02 | 18:13:12,402675 ][ Group ] Group (sys) was created 
+[ 2019-10-02 | 18:13:12,403675 ][ Group ] Group (sys) was serialised 
+[ 2019-10-02 | 18:13:12,405675 ][ Group ] List of players group (sys) 
+[ 2019-10-02 | 18:13:12,406675 ][ Interface ] Call main Menu 
+[ 2019-10-02 | 18:13:12,407675 ][ __main__ ] Action from menu (?) 
+[ 2019-10-02 | 18:13:26,464675 ][ __main__ ] Action: 2 
+[ 2019-10-02 | 18:13:26,465675 ][ __main__ ] Editing Menu 

@@ -1,10 +1,41 @@
 from  colorama import Fore, Back, Style
 from Colour import MyCol as col
 
-from Settings import  *
+from Settings import *
+
+from Group import Group as grp
 
 import pickle as pck
-import os
+
+def LoadingPlayers():
+    players = []
+    WriteLog('Loading players...', __name__)
+    list_of_files_p = os.listdir(os.path.join(path, plr_path))
+    if list_of_files_p != []:
+        for file in list_of_files_p:
+            WriteLog(f"Loading player ({file.split('.')[0]}) ...", __name__)
+            f = open(os.path.join(path, plr_path, file), 'rb')
+            players.append(pck.load(f))
+            f.close()
+            WriteLog('Ok (Loading player)', __name__)
+        WriteLog('Ok', __name__)
+        print('='*50 + '\nAvailable players in system:\n')
+        return grp(players, 'sys')
+    else:
+        WriteLog('Empty list of saved players occured, start creating')
+        print('List of players is empty...\n')
+        WriteLog('How much players to create (?)', __name__)
+        amount = int(input('How much players do u want to create? \n'))
+        WriteLog(f'Amount: {amount}', __name__)
+        for i in range(int(amount)):
+            os.system('cls')
+            WriteLog(f'{i}/{ch}', __name__)
+            print(f'Create: {i}/{ch}')
+            p = plr()
+            p.Serialise()
+            players.append(p)
+        WriteLog('Ok', __name__)
+        return grp(players, 'sys')
 
 class Player:
     _lvl = 1
@@ -14,7 +45,6 @@ class Player:
     _colour = ''
 
     def __init__(self):
-        os.system('cls')
         name = ''
         while os.path.join(path, plr_path, name.join('.pickle')) in os.listdir(os.path.join(path, plr_path)) or name == '':
             name = input('Input ur name (Only letters): ')
@@ -30,6 +60,7 @@ class Player:
             else:
                 print('Check available colours')
         os.system('cls')
+        WriteLog(f'Player ({self._name}) was created', __name__)
 
 
     def SetName(self):
@@ -64,3 +95,5 @@ class Player:
     def Serialise(self):
         with open(f'players\{self._name}.pickle', 'wb') as f:
             pck.dump(self, f)
+
+        WriteLog(f'Player ({self._name}) was serialised', __name__)

@@ -1,45 +1,53 @@
 from Player import Player as plr
 from Player import col
-from Player import pck
+from Player import LoadingPlayers
 
 from Group import Group as grp
 
 from Settings import *
 
+import pickle as pck
 import colorama
 import os
+import time
 
+WriteLog('', __name__, 'sep')
+WriteLog('Start of the program', __name__)
+WriteLog('Colorama init...', __name__)
 colorama.init()
-players = []
+WriteLog('Ok', __name__)
 
-print('Loading players...', end = ' ')
-WriteLog('Loading players...', __name__)
-list_of_files_p = os.listdir(os.path.join(path, plr_path))
-if list_of_files_p != []:
-    for file in list_of_files_p:
-        f = open(os.path.join(path, plr_path, file), 'rb')
-        players.append(pck.load(os.path.join(path, plr_path, file), f))
-        f.close()
-    print('Ok')
-    print('='*50 + '\n Available players:\n')
-    sys_group = grp(players, 'sys')
-    sys_group.ListOfPlayers()
-else:
-    print('List of players is empty...\n')
-    amount = int(input('How much players do u want to create? '))
-    if amount !=
-        for i in range(int(amount)):
-            p = plr()
-            p.Serialise()
-            pl.append(p)
+sys_group = LoadingPlayers()
+sys_group.ListOfPlayers()
 
-# pl = []
-# for _ in range(3):
-#     p = plr()
-#     p.Serialise()
-#     pl.append(p)
-#
-# sys_group = grp(pl, 'sys')
+WriteLog('Additional players (?)', __name__)
+ch = input('Do u want to create additional players? (1/0)\n')
+WriteLog(f'Answer: {ch}', __name__)
+if ch == '1':
+    os.system('cls')
+    WriteLog('How much players to create (?)', __name__)
+    ch = int(input('How much players do u want to create? \n'))
+    WriteLog(f'Amount: {ch}', __name__)
+    for i in range(ch):
+        os.system('cls')
+        WriteLog(f'{i}/{ch}', __name__)
+        print(f'Create: {i}/{ch}')
+        p = plr()
+        p.Serialise()
+        sys_group.AddPlayer(p)
 
-# sys_group.Serialise(type = 'sys')
-# sys_group.ListOfPlayers()
+os.system('cls')
+sys_group.ListOfPlayers()
+WriteLog('Choice of players for game...', __name__)
+index = input('Input index of players for game (split by ,): ').replace(' ', '').split(',')
+WriteLog(f'Indexes: {index}', __name__)
+
+buf = []
+for i in index:
+    buf.append(sys_group._l_players[int(i)])
+
+sys_group = grp(buf, 'sys')
+sys_group.Serialise()
+sys_group.ListOfPlayers()
+WriteLog('Exit from program code: 0', __name__)
+WriteLog('', __name__, 'sep')

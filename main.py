@@ -50,30 +50,53 @@ for i in index:
 
 sys_group = grp(buf, 'sys')
 sys_group.Serialise()
-sys_group.ListOfPlayers()
 
-PrintMenu()
-WriteLog('Action from menu (?)', __name__)
-ch = input('What r u want to do?\n')
-WriteLog(f'Action: {ch}', __name__)
-if ch == '0': pass
-if ch == '1': pass
-if ch == '2':
-    WriteLog('Editing Menu', __name__)
+ch = '!'
+while ch != '0':
     os.system('cls')
-    PrintMenuEditPlayer()
-    WriteLog('Action from Editing Menu (?)', __name__)
+    PrintMenu()
+    WriteLog('Action from menu (?)', __name__)
     ch = input('What r u want to do?\n')
     WriteLog(f'Action: {ch}', __name__)
-    if ch == '1':
+    if ch == '0':
+        WriteLog('Exit from Main Menu', __name__)
+        os.system('cls')
+        break
+    if ch == '1': WriteLog('Start game',  __name__)
+    if ch == '2':
+        WriteLog('Editing Menu', __name__)
+        os.system('cls')
+        PrintMenuEditPlayer()
+        WriteLog('Action from Editing Menu (?)', __name__)
+        ch = input('What r u want to do?\n')
+        WriteLog(f'Action: {ch}', __name__)
+
+        if ch == '1':
+            WriteLog('Editing name', __name__)
+            os.system('cls')
+            sys_group.ListOfPlayers()
+            WriteLog('Choose of player for Editing...', __name__)
+            index = int(input('Input index of player for Editing: '))
+            WriteLog(f'Index: {index}', __name__)
+            sys_group._l_players[index].SetName()
+
+        if ch == '2':
+            WriteLog('Editing colour', __name__)
+            os.system('cls')
+            sys_group.ListOfPlayers()
+            WriteLog('Choose of player for Editing...', __name__)
+            index = int(input('Input index of player for Editing: '))
+            WriteLog(f'Index: {index}', __name__)
+            sys_group._l_players[index].SetColor()
+
+    if ch == '3':
+        WriteLog('Delete player', __name__)
         os.system('cls')
         sys_group.ListOfPlayers()
-        WriteLog('Choice of player for Editing...', __name__)
-        index = int(input('Input index of player for Editing: '))
-        WriteLog(f'Index: {index}', __name__)
-        sys_group._l_players[index].SetName()
-
-if ch == '3': pass
+        WriteLog('Number of player for delete (?)', __name__)
+        ch = int(input('Input number of player to delete: '))
+        WriteLog(f'Number to delete: {ch}', __name__)
+        sys_group._l_players.pop(ch).Delete()
 
 
 WriteLog('Exit from program code: 0', __name__)

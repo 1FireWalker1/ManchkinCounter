@@ -26,7 +26,7 @@ class Group:
 
     def AddPlayer(self, pl):
         self._l_players.append(pl)
-        WriteLog(f'Player ({pl._name} added to group ({self._name}))')
+        WriteLog(f'Player ({pl._name} added to group ({self._name}))', __name__)
 
     def ListOfPlayers(self):
         for index, player in enumerate(self._l_players):

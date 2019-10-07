@@ -6,7 +6,7 @@ def PrintMenu():
 
 def PrintMenuEditPlayer():
     print(menu_edit_p)
-    WriteLog('Call Edit Menu', __name__)   
+    WriteLog('Call Edit Menu', __name__)
 
 main_menu = '''
 (1) Start Game
@@ -23,5 +23,5 @@ menu_edit_p ='''
 (0) Exit from Editing
 '''
 
-action_main_menu = {}
-action_menu_edit_p = {}
+action_main_menu = ['0', '1', '2', '3']
+action_menu_edit_p = ['0', '1', '2']

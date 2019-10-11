@@ -13,14 +13,14 @@ class Group:
     def __init__(self, players, type='default'):
         self._l_players = players
         self._amount = len(players)
-        if type == 'sys':
-            self._name = 'sys'
+        if type in ['sys', 'start']:
+            self._name = type
             self._l_players = players
         else:
             name = 'sys'
-            while name == 'sys':
+            while name in ['sys', 'start']:
                 name = input('Input name of the group (except (sys)): ')
-                if name != 'sys':
+                if name not in ['sys','start']:
                     self._name = name
         WriteLog(f'Group ({self._name}) was created', __name__)
 

@@ -19,8 +19,8 @@ WriteLog('Colorama init...', __name__)
 colorama.init()
 WriteLog('Ok', __name__)
 
-sys_group = LoadingPlayers()
-sys_group.ListOfPlayers()
+start_group = LoadingPlayers()
+start_group.ListOfPlayers()
 
 WriteLog('Additional players (?)', __name__)
 ch = input('Do u want to create additional players? (1/0)\n')
@@ -32,21 +32,21 @@ if ch == '1':
     WriteLog(f'Amount: {ch}', __name__)
     for i in range(ch):
         os.system('cls')
-        WriteLog(f'{i}/{ch}', __name__)
-        print(f'Create: {i}/{ch}')
+        WriteLog(f'{i+1}/{ch}', __name__)
+        print(f'Create: {i+1}/{ch}')
         p = plr()
         p.Serialise()
-        sys_group.AddPlayer(p)
+        start_group.AddPlayer(p)
 
 os.system('cls')
-sys_group.ListOfPlayers()
+start_group.ListOfPlayers()
 WriteLog('Choice of players for game...', __name__)
 index = input('Input index of players for game (minimum 2)(split by ,): ').replace(' ', '').split(',')
 WriteLog(f'Indexes: {index}', __name__)
 
 buf = []
 for i in index:
-    buf.append(sys_group._l_players[int(i)])
+    buf.append(start_group._l_players[int(i)])
 
 sys_group = grp(buf, 'sys')
 sys_group.Serialise()
@@ -94,9 +94,13 @@ while ch != '0':
         os.system('cls')
         sys_group.ListOfPlayers()
         WriteLog('Number of player for delete (?)', __name__)
-        ch = int(input('Input number of player to delete: '))
+        ch = input('Input number of players to delete(split by ,): ').replace(' ','').split(',')
+        ch = [int(i) for i in ch]
         WriteLog(f'Number to delete: {ch}', __name__)
-        sys_group._l_players.pop(ch).Delete()
+        for id in ch:
+            WriteLog(f'Kick player ({sys_group._l_players[id].GetName()})')
+            sys_group._l_players.pop(id)
+
 
 
 WriteLog('Exit from program code: 0', __name__)

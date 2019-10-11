@@ -1,61 +1,35 @@
 ====================================================================================================
-[ 2019-10-07 | 12:24:44,082270 ][ __main__ ] Start of the program 
-[ 2019-10-07 | 12:24:44,083270 ][ __main__ ] Colorama init... 
-[ 2019-10-07 | 12:24:44,083270 ][ __main__ ] Ok 
-[ 2019-10-07 | 12:24:44,084269 ][ Player ] Loading players... 
-[ 2019-10-07 | 12:24:44,085269 ][ Player ] Loading player (FireWalker) ... 
-[ 2019-10-07 | 12:24:44,086268 ][ Player ] Ok (Loading player) 
-[ 2019-10-07 | 12:24:44,086268 ][ Player ] Loading player (ham) ... 
-[ 2019-10-07 | 12:24:44,087268 ][ Player ] Ok (Loading player) 
-[ 2019-10-07 | 12:24:44,088267 ][ Player ] Loading player (Linda) ... 
-[ 2019-10-07 | 12:24:44,088267 ][ Player ] Ok (Loading player) 
-[ 2019-10-07 | 12:24:44,089267 ][ Player ] Loading player (Miley) ... 
-[ 2019-10-07 | 12:24:44,090266 ][ Player ] Ok (Loading player) 
-[ 2019-10-07 | 12:24:44,090266 ][ Player ] Loading player (Sigrskaydle) ... 
-[ 2019-10-07 | 12:24:44,091266 ][ Player ] Ok (Loading player) 
-[ 2019-10-07 | 12:24:44,091266 ][ Player ] Ok 
-[ 2019-10-07 | 12:24:44,092265 ][ Group ] Group (sys) was created 
-[ 2019-10-07 | 12:24:44,095264 ][ Group ] List of players group (sys) 
-[ 2019-10-07 | 12:24:44,096263 ][ __main__ ] Additional players (?) 
-[ 2019-10-07 | 12:24:52,994812 ][ __main__ ] Answer: 1 
-[ 2019-10-07 | 12:24:53,001808 ][ __main__ ] How much players to create (?) 
-[ 2019-10-07 | 12:24:55,049784 ][ __main__ ] Amount: 1 
-[ 2019-10-07 | 12:24:55,056780 ][ __main__ ] 0/1 
-[ 2019-10-07 | 12:25:11,542533 ][ Player ] Player (Scumfuck) was created 
-[ 2019-10-07 | 12:25:11,557526 ][ Player ] Player (Scumfuck) was serialised 
-[ 2019-10-07 | 12:25:11,558525 ][ Group ] Player (Scumfuck added to group (sys)) 
-[ 2019-10-07 | 12:25:11,567521 ][ Group ] List of players group (sys) 
-[ 2019-10-07 | 12:25:11,568520 ][ __main__ ] Choice of players for game... 
-[ 2019-10-07 | 12:25:29,006797 ][ __main__ ] Indexes: ['0', '1', '2', '3'] 
-[ 2019-10-07 | 12:25:29,007796 ][ Group ] Group (sys) was created 
-[ 2019-10-07 | 12:25:29,008796 ][ Group ] Group (sys) was serialised 
-[ 2019-10-07 | 12:25:29,016792 ][ Interface ] Call main Menu 
-[ 2019-10-07 | 12:25:29,017791 ][ __main__ ] Action from menu (?) 
-[ 2019-10-07 | 12:25:34,763917 ][ __main__ ] Action: 2 
-[ 2019-10-07 | 12:25:34,764916 ][ __main__ ] Editing Menu 
-[ 2019-10-07 | 12:25:34,770913 ][ Interface ] Call Edit Menu 
-[ 2019-10-07 | 12:25:34,770913 ][ __main__ ] Action from Editing Menu (?) 
-[ 2019-10-07 | 12:25:36,858869 ][ __main__ ] Action: 1 
-[ 2019-10-07 | 12:25:36,858869 ][ __main__ ] Editing name 
-[ 2019-10-07 | 12:25:36,866865 ][ Group ] List of players group (sys) 
-[ 2019-10-07 | 12:25:36,866865 ][ __main__ ] Choose of player for Editing... 
-[ 2019-10-07 | 12:25:42,495049 ][ __main__ ] Index: 1 
-[ 2019-10-07 | 12:25:49,084753 ][ Player ] Player (ham): set Name from (ham) --> (Hamster) 
-[ 2019-10-07 | 12:25:49,086752 ][ Player ] Player (Hamster) was serialised 
-[ 2019-10-07 | 12:25:49,095747 ][ Interface ] Call main Menu 
-[ 2019-10-07 | 12:25:49,096747 ][ __main__ ] Action from menu (?) 
-[ 2019-10-07 | 12:25:52,242173 ][ __main__ ] Action: 2 
-[ 2019-10-07 | 12:25:52,242173 ][ __main__ ] Editing Menu 
-[ 2019-10-07 | 12:25:52,250169 ][ Interface ] Call Edit Menu 
-[ 2019-10-07 | 12:25:52,250169 ][ __main__ ] Action from Editing Menu (?) 
-[ 2019-10-07 | 12:25:53,713437 ][ __main__ ] Action: 2 
-[ 2019-10-07 | 12:25:53,714437 ][ __main__ ] Editing colour 
-[ 2019-10-07 | 12:25:53,720434 ][ Group ] List of players group (sys) 
-[ 2019-10-07 | 12:25:53,721433 ][ __main__ ] Choose of player for Editing... 
-[ 2019-10-07 | 12:25:57,286650 ][ __main__ ] Index: 3 
-[ 2019-10-07 | 12:26:00,377104 ][ Interface ] Call main Menu 
-[ 2019-10-07 | 12:26:00,377104 ][ __main__ ] Action from menu (?) 
-[ 2019-10-07 | 12:26:04,818882 ][ __main__ ] Action: 0 
-[ 2019-10-07 | 12:26:04,819881 ][ __main__ ] Exit from Main Menu 
-[ 2019-10-07 | 12:26:04,825878 ][ __main__ ] Exit from program code: 0 
-====================================================================================================
+[ 2019-10-11 | 17:09:16,640738 ][ __main__ ] Start of the program 
+[ 2019-10-11 | 17:09:16,640738 ][ __main__ ] Colorama init... 
+[ 2019-10-11 | 17:09:16,641738 ][ __main__ ] Ok 
+[ 2019-10-11 | 17:09:16,642738 ][ Player ] Loading players... 
+[ 2019-10-11 | 17:09:16,643738 ][ Player ] Loading player (FireWalker) ... 
+[ 2019-10-11 | 17:09:16,643738 ][ Player ] Ok (Loading player) 
+[ 2019-10-11 | 17:09:16,644738 ][ Player ] Loading player (Hamster) ... 
+[ 2019-10-11 | 17:09:16,645738 ][ Player ] Ok (Loading player) 
+[ 2019-10-11 | 17:09:16,645738 ][ Player ] Loading player (Linda) ... 
+[ 2019-10-11 | 17:09:16,646738 ][ Player ] Ok (Loading player) 
+[ 2019-10-11 | 17:09:16,647738 ][ Player ] Loading player (Miley) ... 
+[ 2019-10-11 | 17:09:16,648738 ][ Player ] Ok (Loading player) 
+[ 2019-10-11 | 17:09:16,707738 ][ Player ] Loading player (Scumfuck) ... 
+[ 2019-10-11 | 17:09:16,708738 ][ Player ] Ok (Loading player) 
+[ 2019-10-11 | 17:09:16,709738 ][ Player ] Loading player (Sigrskaydle) ... 
+[ 2019-10-11 | 17:09:16,710738 ][ Player ] Ok (Loading player) 
+[ 2019-10-11 | 17:09:16,710738 ][ Player ] Loading player (Yield) ... 
+[ 2019-10-11 | 17:09:16,711738 ][ Player ] Ok (Loading player) 
+[ 2019-10-11 | 17:09:16,712738 ][ Player ] Ok 
+[ 2019-10-11 | 17:09:16,714738 ][ Group ] Group (sys) was created 
+[ 2019-10-11 | 17:09:16,717738 ][ Group ] List of players group (sys) 
+[ 2019-10-11 | 17:09:16,718738 ][ __main__ ] Additional players (?) 
+[ 2019-10-11 | 17:09:19,252738 ][ __main__ ] Answer: 0 
+[ 2019-10-11 | 17:09:19,261738 ][ Group ] List of players group (sys) 
+[ 2019-10-11 | 17:09:19,261738 ][ __main__ ] Choice of players for game... 
+[ 2019-10-11 | 17:09:24,332738 ][ __main__ ] Indexes: ['0', '1', '2', '3', '4', '5', '6'] 
+[ 2019-10-11 | 17:09:24,333738 ][ Group ] Group (sys) was created 
+[ 2019-10-11 | 17:09:24,335738 ][ Group ] Group (sys) was serialised 
+[ 2019-10-11 | 17:09:24,341738 ][ Interface ] Call main Menu 
+[ 2019-10-11 | 17:09:24,342738 ][ __main__ ] Action from menu (?) 
+[ 2019-10-11 | 17:09:32,491738 ][ __main__ ] Action: 3 
+[ 2019-10-11 | 17:09:32,492738 ][ __main__ ] Delete player 
+[ 2019-10-11 | 17:09:32,501738 ][ Group ] List of players group (sys) 
+[ 2019-10-11 | 17:09:32,501738 ][ __main__ ] Number of player for delete (?) 

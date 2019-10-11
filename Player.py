@@ -37,7 +37,7 @@ def LoadingPlayers():
             p.Serialise()
             players.append(p)
         WriteLog('Ok', __name__)
-        return grp(players, 'sys')
+        return grp(players, 'start')
 
 class Player:
     _lvl = 1

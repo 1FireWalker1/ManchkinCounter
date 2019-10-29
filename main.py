@@ -51,27 +51,37 @@ for i in index:
 sys_group = grp(buf, 'sys')
 sys_group.Serialise()
 
-ch = '!'
-while ch != '0':
+while (main_ch := '') != '!':
     os.system('cls')
+    sys_group.ListOfPlayers()
     PrintMenu()
     WriteLog('Action from menu (?)', __name__)
-    ch = input('What r u want to do?\n')
-    WriteLog(f'Action: {ch}', __name__)
-    if ch == '0':
+    main_ch = input('What r u want to do?\n')
+    WriteLog(f'Action: {main_ch}', __name__)
+    if main_ch == '!':
         WriteLog('Exit from Main Menu', __name__)
         os.system('cls')
         break
-    if ch == '1': WriteLog('Start game',  __name__)
-    if ch == '2':
+    if main_ch == '1':
+        os.system('cls')
+        WriteLog('Start game',  __name__)
+        sys_group.ListOfPlayers()
+        print('\n(!) Back')
+        WriteLog('Choose of player...', __name__)
+        index = int(input('Choose player: '))
+        WriteLog(f'Index: {index}', __name__)
+
+
+
+    if main_ch == '2':
         WriteLog('Editing Menu', __name__)
         os.system('cls')
         PrintMenuEditPlayer()
         WriteLog('Action from Editing Menu (?)', __name__)
-        ch = input('What r u want to do?\n')
-        WriteLog(f'Action: {ch}', __name__)
+        edit_ch = input('What r u want to do?\n')
+        WriteLog(f'Action: {edit_ch}', __name__)
 
-        if ch == '1':
+        if edit_ch == '1':
             WriteLog('Editing name', __name__)
             os.system('cls')
             sys_group.ListOfPlayers()
@@ -80,7 +90,7 @@ while ch != '0':
             WriteLog(f'Index: {index}', __name__)
             sys_group._l_players[index].SetName()
 
-        if ch == '2':
+        if edit_ch == '2':
             WriteLog('Editing colour', __name__)
             os.system('cls')
             sys_group.ListOfPlayers()
@@ -89,15 +99,15 @@ while ch != '0':
             WriteLog(f'Index: {index}', __name__)
             sys_group._l_players[index].SetColor()
 
-    if ch == '3':
+    if main_ch == '3':
         WriteLog('Delete player', __name__)
         os.system('cls')
         sys_group.ListOfPlayers()
         WriteLog('Number of player for delete (?)', __name__)
-        ch = input('Input number of players to delete(split by ,): ').replace(' ','').split(',')
-        ch = [int(i) for i in ch]
-        WriteLog(f'Number to delete: {ch}', __name__)
-        for id in ch:
+        del_ch = input('Input number of players to delete(split by ,): ').replace(' ','').split(',')
+        index = [int(i) for i in del_ch]
+        WriteLog(f'Number to delete: {del_ch}', __name__)
+        for id in index:
             WriteLog(f'Kick player ({sys_group._l_players[id].GetName()})')
             sys_group._l_players.pop(id)
 

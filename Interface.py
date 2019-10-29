@@ -13,15 +13,25 @@ main_menu = '''
 (2) Edit Player
 (3) Delete Player
 
-(0) Exit from Counter
+(!) Exit from Counter
 '''
 
 menu_edit_p ='''
 (1) Edit name
 (2) Edit Colour
 
-(0) Exit from Editing
+(!) Exit from Editing
 '''
 
-action_main_menu = ['0', '1', '2', '3']
-action_menu_edit_p = ['0', '1', '2']
+menu_game = '''
+(1) Add Level +1
+(2) Sub Level -1
+(3) Add Gear +1
+(4) Sub Gear -1
+
+(!) Back
+'''
+
+action_main_menu = ['!', '1', '2', '3']
+action_menu_edit_p = ['!', '1', '2']
+action_menu_game = ['!', '1', '2', '3', '4']
